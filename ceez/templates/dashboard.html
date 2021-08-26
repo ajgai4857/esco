@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0, shrink-to-fit=no" name="viewport">
+    <title>ceez from Variance</title>
+    <link href={{url_for('static',filename="css/bs-min.css")}} rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Amarante&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato&amp;display=swap" rel="stylesheet">
+    <link href={{url_for('static',filename="fonts/font-awesome.min.css")}} rel="stylesheet">
+    <link href={{url_for('static',filename="fonts/material-icons.min.css")}} rel="stylesheet">
+    <link href={{url_for('static',filename="css/dh-card-image-left-dark.css")}} rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" rel="stylesheet">
+    <link href={{url_for('static',filename="css/NavBar-Notifications-Panel-1.css")}} rel="stylesheet">
+    <link href={{url_for('static',filename="css/NavBar-Notifications-Panel.css")}} rel="stylesheet">
+    <link href={{url_for('static',filename="fonts/ionicons.min.css")}} rel="stylesheet">
+    <link href={{url_for('static',filename="css/Toggle-Switch-1.css")}} rel="stylesheet">
+    <link href={{url_for('static',filename="css/Toggle-Switch.css")}} rel="stylesheet">
+</head>
+
+<body class="text-black-50" data-bs-offset="72" data-bs-spy="scroll" data-bs-target="#mainNav" id="page-top">
+<nav class="navbar navbar-light navbar-expand-lg fixed-top bg-secondary text-uppercase" id="mainNav">
+    <div class="container">
+        <div class="dropdown flash animated"><a aria-expanded="false"
+                                                class="link-light bg-secondary border rounded border-secondary" data-bs-toggle="dropdown" href="#"
+                                                style="padding-top: 11px;"><i class="material-icons">notifications_active</i></a>
+            <div class="dropdown-menu dropdown-menu-dark notification-menu"><a class="dropdown-item notification-item"
+                                                                               href="#">
+                <div>
+                    <p>variance pvt. ltd. Welcomes you to ceez</p><span>few minutes ago...</span>
+                </div>
+            </a></div>
+        </div>
+        <button aria-controls="navbarResponsive" aria-expanded="false"
+                aria-label="Toggle navigation"
+                class="navbar-toggler text-white bg-primary navbar-toggler-right text-uppercase rounded" data-bs-target="#navbarResponsive" data-bs-toggle="collapse"><i
+                class="fa fa-bars"></i></button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#schedule">Take
+                    Profits</a></li>
+                <li class="nav-item mx-0 mx-lg-1">
+                    <!-- Start: #place_order --><a class="nav-link py-3 px-0 px-lg-3 rounded"
+                                                   href="#place_order">ADD</a><!-- End: #place_order -->
+                </li>
+                <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#settings">Settings</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<header class="text-center text-white bg-primary masthead">
+    <div class="container">
+        <h1 style="font-family: Montserrat, sans-serif;color: rgb(255,255,255);">Variance</h1>
+        <hr>
+    </div>
+</header>
+<!-- Start: #schedule -->
+<section class="bg-dark portfolio" id="schedule" style="background: rgb(0,0,0);">
+    <div class="col">
+        <h1 class="text-center d-xl-flex flex-grow-1 flex-fill justify-content-xl-center" style="color: #ffffff;">Take
+            Profits</h1>
+        <hr>
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <!-- <div class="table-responsive" style="padding-right: 51px;padding-left: 68px;"> -->
+
+                            {% if len %}
+                            
+                            <div style="text-align: center;">
+                                <h3 style="color: rgb(255,255,255);">Nothing Scheduled</h3>
+                            </div>
+                            {% else %}
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th class="table-active bg-secondary bg-gradient"
+                                            style="color: rgb(255,255,255);font-size: 21px;text-align: center;font-weight: bold;border: 2px outset var(--bs-secondary) ;">
+                                            Order
+                                        </th>
+                                        <th class="bg-secondary bg-gradient shadow-lg"
+                                            style="color: rgb(255,255,255);font-size: 21px;font-weight: bold;text-align: center;border: 2px outset var(--bs-secondary) ;">
+                                            &nbsp;Take-Profit
+                                        </th>
+                                        <th class="bg-secondary bg-gradient shadow-lg"
+                                            style="color: rgb(255,255,255);font-size: 21px;font-weight: bold;text-align: center;border: 2px outset var(--bs-secondary) ;">
+                                            &nbsp;Delete
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                
+                                    {% for x in list %}
+
+                                    <tr>
+                                        <td class="font-monospace text-capitalize text-center text-light"
+                                            style="border-radius: 20px;border-top: 2px none var(--bs-secondary);border-right: 2px ridge var(--bs-secondary);border-bottom-width: 2px;border-bottom-color: var(--bs-secondary);border-left-width: 2px;border-left-color: var(--bs-secondary);">
+                                            {{ loop.index  }}
+                                        </td>
+                                        <td class="font-monospace text-capitalize text-center text-light"
+                                            style="border-top: 2px none var(--bs-secondary) ;border-right: 2px ridge var(--bs-secondary) ;border-bottom-width: 2px;border-bottom-color: var(--bs-secondary);border-left-width: 2px;border-left-color: var(--bs-secondary);border-radius: 20px;">
+                                            {{ x }}
+                                        </td>
+                                        <td ><a href='/delete/{{x}}' button type="button" class="btn btn-outline-danger">Delete</button></td>
+                                        </td>
+                                    </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                                
+                                {% endif %}
+                </div>
+            </div>
+            <div class="d-xl-flex photo-card" style="background: rgb(0,0,0);width: 332px;"></div>
+        </div>
+    </div>
+</section>
+<!-- End: #schedule -->
+<!-- Start: #seperator -->
+<section class="text-white bg-primary mb-0" id="s1" style="background: var(--bs-yellow);"></section>
+<!-- End: #seperator -->
+
+<!-- Start: #place_order -->
+<section class="bg-dark" id="place_order">
+    <div class="col">
+        <h1 class="text-center d-xl-flex flex-grow-1 flex-fill justify-content-xl-center" style="color: #ffffff;">Add
+            Take - Profit</h1>
+        <hr"><!-- Start: 1 Row 2 Columns -->
+        <div class="container" style="height: 203px;">
+            <div class="photo-card" style="background: rgb(0,0,0);width: 507px;height: 142px;">
+                <div class="photo-background"
+                     style="width: 52.25px;background: linear-gradient(90deg, rgb(8,48,40), var(--bs-primary));height: 142px;min-height: 142px;"></div>
+                <div class="photo-details" style="width: 446.25px;padding-bottom: 21px;">
+                    <form action="/save" method="POST">
+                        <div class="row">
+                            <div class="col"
+                                 style="color: var(--bs-light);text-align: center;font-size: 17px;font-weight: bold;">
+                                <label class="col-form-label" for="take_profit">Take Profit</label></div>
+                            <div class="col"><input class="bg-dark border rounded border-dark shadow-none form-control"
+                                                    name="take_profit"
+                                                    style="width: 204px;background: #212529;color: rgb(255,255,255);text-align: center;"
+                                                    type="text">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <button class="btn btn-primary link-light bg-secondary border rounded-pill border-secondary"
+                                        style="padding-top: 0px;margin-top: 17px;" type="submit">Add
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div><!-- End: 1 Row 2 Columns -->
+    </div>
+</section><!-- End: #place_order -->
+<!-- Start: #seperator -->
+<section class="text-white bg-primary mb-0" id="about" style="background: var(--bs-yellow);"></section>
+<!-- End: #seperator -->
+<!-- Start: #settings -->
+<section class="bg-dark d-xl-flex justify-content-xl-center" id="contact">
+    <div class="col">
+        <h1 class="text-center d-xl-flex flex-grow-1 flex-fill justify-content-xl-center" style="color: #ffffff;">
+            Settings</h1>
+        <hr><!-- Start: 1 Row 2 Columns -->
+        <div class="container">
+            <div class="photo-card" style="background: rgb(0,0,0);width: 505px;height: 535px;">
+                <div class="photo-background"
+                     style="width: 52.25px;background: linear-gradient(90deg, rgb(8,48,40), var(--bs-primary));height: 535px;min-height: 160px;"></div>
+                <div class="photo-details" style="width: auto;padding-bottom: 21px;">
+                    <form action="/update" method="POST">
+                        <div class="row">
+                            <div class="col"
+                                 style="color: var(--bs-light);text-align: center;font-size: 17px;font-weight: bold;">
+                                <label class="col-form-label" for="auto_trade">Auto Trade</label></div>
+                            <div class="col" style="margin: 0px;margin-top: 0px;margin-bottom: 5px;">
+                                <div class="card bg-secondary d-md-flex justify-content-md-center align-items-md-center"
+                                     style="background: var(--bs-secondary);height: 37px;width: 185px;border-top-style: none;border-right-style: none;border-bottom-style: none;border-bottom-color: var(--bs-secondary);border-left-style: none;border-radius: 11px;">
+                                    <input data-bss-hover-animate="jello" name="auto_trade" type="checkbox"></div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col"
+                                 style="color: var(--bs-light);text-align: center;font-size: 17px;font-weight: bold;">
+                                <label class="col-form-label" for="margin_type">Margin Type</label></div>
+                            <div class="col"><select class="form-select d-md-flex"
+                                                     name="margin_type"
+                                                     style="color: var(--bs-light);font-size: 17px;font-weight: bold;text-align: center;background: var(--bs-secondary);border-top-style: none;border-right-style: none;border-bottom-style: none;border-bottom-color: var(--bs-secondary);border-left-style: none;border-radius: 11px;width: 185px;margin: 0px;margin-top: 0px;margin-bottom: 5px;" value="{{ s['margin_type'] }}">
+                                <option value="FALSE">Isolated</option>
+                                <option value="13">Other</option>
+                            </select></div>
+                        </div>
+                        <div class="row">
+                            <div class="col"
+                                 style="color: var(--bs-light);text-align: center;font-size: 17px;font-weight: bold;">
+                                <label class="col-form-label" for="type">Type</label></div>
+                            <div class="col"><select class="form-select"
+                                                     name="type"
+                                                     style="color: var(--bs-light);font-size: 17px;font-weight: bold;text-align: center;background: var(--bs-secondary);border-top-style: none;border-right-style: none;border-bottom-style: none;border-bottom-color: var(--bs-secondary);border-left-style: none;border-radius: 11px;width: 185px;margin: 0px;margin-top: 0px;margin-bottom: 5px;">
+                                <option value="LIMIT">Limit</option>
+                                <option value="13">Market</option>
+                            </select></div>
+                        </div>
+                        <div class="row">
+                            <div class="col"
+                                 style="color: var(--bs-light);text-align: center;font-size: 17px;font-weight: bold;">
+                                <label class="col-form-label" for="time_in_force">Time In Force</label></div>
+                            <div class="col"><select class="form-select"
+                                                     name="time_in_force"
+                                                     style="color: var(--bs-light);font-size: 17px;font-weight: bold;text-align: center;background: var(--bs-secondary);border-top-style: none;border-right-style: none;border-bottom-style: none;border-bottom-color: var(--bs-secondary);border-left-style: none;border-radius: 11px;width: 185px;margin: 0px;margin-top: 0px;margin-bottom: 5px;" value="{{ s['time_in_force']}}">
+                                <option value="GTC">GTC</option>
+                                <option value="FOK">FOK</option>
+                                <option value="IOC">IOC</option>
+                            </select></div>
+                        </div>
+                        <div class="row">
+                            <div class="col"
+                                 style="color: var(--bs-light);text-align: center;font-size: 17px;font-weight: bold;">
+                                <label class="col-form-label" for="enabled_take_profit">Enabled Take Profits</label>
+                            </div>
+                            <div class="col"><input class="form-control" min="1"
+                                                    name="enabled_take_profit"
+                                                    style="color: var(--bs-light);font-size: 17px;font-weight: bold;text-align: center;background: var(--bs-secondary);border-top-style: none;border-right-style: none;border-bottom-style: none;border-bottom-color: var(--bs-secondary);border-left-style: none;border-radius: 11px;width: 185px;margin: 0px;margin-top: 0px;margin-bottom: 5px;" type="number"
+                                                    value="{{ ['enabled_take_profit'] }}"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col"
+                                 style="color: var(--bs-light);text-align: center;font-size: 17px;font-weight: bold;">
+                                <label class="col-form-label" for="quantity">Quantity</label></div>
+                            <div class="col"><input class="form-control" min="1"
+                                                    name="quantity"
+                                                    style="color: var(--bs-light);font-size: 17px;font-weight: bold;text-align: center;background: var(--bs-secondary);border-top-style: none;border-right-style: none;border-bottom-style: none;border-bottom-color: var(--bs-secondary);border-left-style: none;border-radius: 11px;width: 185px;margin: 0px;margin-top: 0px;margin-bottom: 5px;" type="number" value="{{ s['quantity'] }}"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col"
+                                 style="color: var(--bs-light);text-align: center;font-size: 17px;font-weight: bold;">
+                                <label class="col-form-label" for="quantity_per_tk">Quantity per Take Profit</label>
+                            </div>
+                            <div class="col"><input class="form-control" min="1"
+                                                    name="quantity_per_tk"
+                                                    style="color: var(--bs-light);font-size: 17px;font-weight: bold;text-align: center;background: var(--bs-secondary);border-top-style: none;border-right-style: none;border-bottom-style: none;border-bottom-color: var(--bs-secondary);border-left-style: none;border-radius: 11px;width: 185px;margin: 0px;margin-top: 0px;margin-bottom: 5px;" type="number"
+                                                    value="{{ s['quantity_per_take_profit'] }}"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col"
+                                 style="color: var(--bs-light);text-align: center;font-size: 17px;font-weight: bold;">
+                                <label class="col-form-label" for="stop_loss">Stop Loss</label></div>
+                            <div class="col">
+                                <div class="card bg-secondary d-md-flex justify-content-md-center align-items-md-center"
+                                     style="background: var(--bs-secondary);width: 185px;border-top-style: none;border-right-style: none;border-bottom-style: none;border-bottom-color: var(--bs-secondary);border-left-style: none;border-radius: 11px;height: 37px;margin-bottom: 5px;">
+                                    <input data-bss-hover-animate="jello" name="stop_loss" type="checkbox"></div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col"
+                                 style="color: var(--bs-light);text-align: center;font-size: 17px;font-weight: bold;">
+                                <label class="col-form-label" for="stop_loss_type">Stop Loss Type</label></div>
+                            <div class="col"><select class="form-select"
+                                                     name="stop_loss_type"
+                                                     style="color: var(--bs-light);font-size: 17px;font-weight: bold;text-align: center;background: var(--bs-secondary);border-top-style: none;border-right-style: none;border-bottom-style: none;border-bottom-color: var(--bs-secondary);border-left-style: none;border-radius: 11px;width: 185px;margin: 0px;margin-top: 0px;margin-bottom: 5px;" value="{{ s['stop_loss_type'] }}">
+                                <option value="STOP_LOSS">Basic</option>
+                                <option value="13">Trailling</option>
+                            </select></div>
+                        </div>
+                        <div class="row">
+                            <div class="col"
+                                 style="color: var(--bs-light);text-align: center;font-size: 17px;font-weight: bold;">
+                                <label class="col-form-label" for="stop_loss_rate">Stop Loss @</label></div>
+                            <div class="col"><input class="form-control" name="stop_loss_rate"
+                                                    style="color: var(--bs-light);font-size: 17px;font-weight: bold;text-align: center;background: var(--bs-secondary);border-top-style: none;border-right-style: none;border-bottom-style: none;border-bottom-color: var(--bs-secondary);border-left-style: none;border-radius: 11px;width: 185px;margin: 0px;margin-top: 0px;margin-bottom: 5px;"
+                                                    type="number" value="{{ s['stop_loss_rate'] }}"></div>
+                        </div>
+                    </form>
+                    <div class="photo-tags">
+                        <ul class="d-xl-flex justify-content-xl-end" style="margin: 13.9px 0px 0px;">
+                            <li>
+                                <button class="btn btn-success link-light bg-primary border rounded-pill border-primary"
+                                        type="submit">Submit
+                                </button>
+                            </li>
+                            <li>
+                                <button class="btn btn-primary link-light bg-dark border rounded-pill border-dark"
+                                        type="reset">Reset
+                                </button>
+                            </li>
+                            <li>
+                                <button class="btn btn-danger link-light bg-danger border rounded-pill border-danger"
+                                        type="button">Leave Session
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div><!-- End: 1 Row 2 Columns -->
+    </div>
+</section><!-- End: #settings -->
+<footer class="text-center bg-secondary footer" style="background: rgb(0,0,0);height: 119px;padding-top: 45px;">
+    <div class="container">
+        <div class="col"><small>Made with&nbsp;🤍 by&nbsp; <a href="linkedin.com/in/monees007">@monees007</a></small>
+        </div>
+        <small>Copyright © Variance Pvt. Ltd. 2021</small>
+    </div>
+</footer>
+<div class="d-lg-none scroll-to-top position-fixed rounded"><a class="text-center d-block rounded text-white"
+                                                               href="#page-top"><i class="fa fa-chevron-up"></i></a>
+</div>
+<!--<script src="../static/js/bootstrap.min.js"></script>-->
+<!--<script src="../static/js/bs-init.js"></script>-->
+<!--<script src="../static/js/freelancer.js"></script>-->
+</script {{url_for('static', filename = "js/bs-min.js")}} >
+</script {{ url_for('static', filename = "js/bs-init.js") }}>
+</script {{ url_for('static', filename = "js/js.js")}}>
+</body>
+
+</html>
