@@ -1,0 +1,8 @@
+{
+    "passcode": "esco123" ,
+    "ticker": "{{ticker}}",
+    "side" : "{{side}}",
+    
+    "time": "{{timenow}}",
+    "close": "{{close}}"
+} 
